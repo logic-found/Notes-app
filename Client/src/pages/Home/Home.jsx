@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import "./home.scss";
+import "./Home.scss";
 import { FaPlus as Plus } from "react-icons/fa";
 import NoteCard from "../../component/NoteCard/NoteCard";
 import { useNavigate } from "react-router-dom";
