@@ -1,32 +1,19 @@
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose')
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const connection = require('./Db_connection')
 const Notes = require('./Routes/Notes')
 const User = require('./Routes/User')
 const JWTauth = require('./Middleware/JWTauth')
-require('dotenv').config();
 const model = require('./Schema/User')
 const UserSchema = model.User
+require('dotenv').config();
 
 //body parser
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser())
-
-
-// connect to DB
-const main = async () => {
-    try{
-        const reponse = await mongoose.connect(process.env.REACT_APP_DB_URL)
-        console.log("connected to db")
-    }
-    catch(err){
-        console.log(err)
-    }
-}
-
 
 
 app.get('/', (req, res) => {
@@ -47,5 +34,5 @@ app.use("/api/user/", User.router);
 
 app.listen(process.env.REACT_APP_PORT, () => {
     console.log("server started")
-    main().catch(err => console.log(err)) 
+    connection()
 })

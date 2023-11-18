@@ -58,7 +58,7 @@ exports.signIn = async (req, res) => {
                         // password matched
                         const privateKey = process.env.REACT_APP_HMAC_PRIVATE_KEY
                         options = {
-                            expiresIn : '2h'
+                            expiresIn : '1h'
                         }
                         var token = jwt.sign({ userId}, privateKey, options);
                         user.token = token                          // set token for this user
