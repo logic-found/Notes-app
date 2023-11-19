@@ -3,6 +3,7 @@ A MERN-based notes app that has the functionality to :
 a)  User Authentication  
   - Login & register users with JWT for authentication
   - brcypt for password hashing
+
 b)  Notes functionality
   - Create, Update & Delete notes
 
