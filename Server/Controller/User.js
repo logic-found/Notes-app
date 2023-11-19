@@ -19,7 +19,7 @@ exports.signUp = async (req, res) => {
                 else{
                     try{
                         const newUser = new User({name, email, password : hash})
-                        newUser.token =  process.env.REACT_APP_USER_DUMMY_TOKEN              // dummy token as token is a required field 
+                        newUser.token =  process.env.USER_DUMMY_TOKEN              // dummy token as token is a required field 
                         const savedUser = await newUser.save()
                         res.status(201).json({name : savedUser.name, email : savedUser.email})
                     }
@@ -56,7 +56,7 @@ exports.signIn = async (req, res) => {
                 else{
                     if(result){
                         // password matched
-                        const privateKey = process.env.REACT_APP_HMAC_PRIVATE_KEY
+                        const privateKey = process.env.HMAC_PRIVATE_KEY
                         options = {
                             expiresIn : '1h'
                         }

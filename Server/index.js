@@ -14,6 +14,7 @@ require('dotenv').config();
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser())
+const port = process.env.PORT || 8000
 
 
 app.get('/', (req, res) => {
@@ -46,7 +47,7 @@ app.get('/api/dummy2', async(req, res) => {
 app.use("/api/notes/", JWTauth, Notes.router);
 app.use("/api/user/", User.router);
 
-app.listen(process.env.REACT_APP_PORT, () => {
+app.listen(port, () => {
     console.log("server started")
     connection()
 })

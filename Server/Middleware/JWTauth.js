@@ -8,7 +8,7 @@ const JWTauth = async (req, res, next) => {
         const authHeader = req.headers.authorization;
         if(authHeader){
             const token = authHeader.split(' ')[1]
-            const decoded = jwt.verify(token, process.env.REACT_APP_HMAC_PRIVATE_KEY)
+            const decoded = jwt.verify(token, process.env.HMAC_PRIVATE_KEY)
             const userId = decoded.userId
             const user = await User.find({_id:userId})
             if(user){
