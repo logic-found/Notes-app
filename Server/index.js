@@ -29,6 +29,9 @@ app.get('/api/autoRedirectToDashboard', JWTauth, async (req, res) => {
         res.status(401).json({err})
     }
 })
+app.get('/api/dummy', (req, res) => {
+    res.json("success")
+})
 app.use("/api/notes/", JWTauth, Notes.router);
 app.use("/api/user/", User.router);
 
