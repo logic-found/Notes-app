@@ -6,8 +6,8 @@ const connection = require('./Db_connection')
 const Notes = require('./Routes/Notes')
 const User = require('./Routes/User')
 const JWTauth = require('./Middleware/JWTauth')
-const model = require('./Schema/User')
-const UserSchema = model.User
+const UserSchema = require('./Schema/User').User
+const NotesSchema = require('./Schema/Notes').Notes
 require('dotenv').config();
 
 //body parser
@@ -33,10 +33,11 @@ app.get('/api/dummy1', (req, res) => {
     res.json("success")
 })
 app.get('/api/dummy2', async(req, res) => {
-    const note = await Notes.findOne({_id : '6558a29009ddbeaac6faffb6'})
+    const note = await NotesSchema.findOne({_id : '6558a29009ddbeaac6faffb6'})
     console.log(note)
     res.json(note)
 })
+
 app.use("/api/notes/", JWTauth, Notes.router);
 app.use("/api/user/", User.router);
 
