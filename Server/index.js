@@ -29,8 +29,13 @@ app.get('/api/autoRedirectToDashboard', JWTauth, async (req, res) => {
         res.status(401).json({err})
     }
 })
-app.get('/api/dummy', (req, res) => {
+app.get('/api/dummy1', (req, res) => {
     res.json("success")
+})
+app.get('/api/dummy2', async(req, res) => {
+    const note = await Notes.findOne({_id : '6558a29009ddbeaac6faffb6'})
+    console.log(note)
+    res.json(note)
 })
 app.use("/api/notes/", JWTauth, Notes.router);
 app.use("/api/user/", User.router);
