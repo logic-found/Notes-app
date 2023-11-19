@@ -33,9 +33,14 @@ app.get('/api/dummy1', (req, res) => {
     res.json("success")
 })
 app.get('/api/dummy2', async(req, res) => {
-    const note = await NotesSchema.findOne({_id : '6558a29009ddbeaac6faffb6'})
-    console.log(note)
-    res.json(note)
+    try{
+        const note = await NotesSchema.findOne({_id : '6558a29009ddbeaac6faffb6'})
+        console.log(note)
+        res.json(note)
+    }
+    catch(err){
+        console.log(err)
+    }
 })
 
 app.use("/api/notes/", JWTauth, Notes.router);
