@@ -1,7 +1,7 @@
 # SimpleNote
-A MERN based notes app that has functionality to :
-a) Login & register users ( secured with JWT and bcrypt for password hashing )
-b) Create, Update & delete there notes 
+A MERN-based notes app that has the functionality to :  
+- User Authentication ( secured with JWT and bcrypt for password hashing )
+-  Create, Update & delete their notes 
 
 ### SignUp & SignIn
 <img width="807" alt="image" src="https://github.com/logic-found/Notes-app/assets/93260606/39dcf9fc-57de-455b-a524-c1c3e502b2e9">
