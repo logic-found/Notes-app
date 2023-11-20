@@ -35,7 +35,7 @@ app.get('/api/dummy1', (req, res) => {
 })
 app.get('/api/dummy2', async(req, res) => {
     try{
-        const note = await NotesSchema.findOne({_id : '6558a29009ddbeaac6faffb6'})
+        const note = await NotesSchema.find()
         console.log(note)
         res.json(note)
     }

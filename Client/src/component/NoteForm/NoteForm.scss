@@ -20,6 +20,11 @@
         border-radius: 10px;
         padding: 10px;
         color: #393949;
+
+        @media (max-width:400px) {
+            padding: 10px;
+            
+        }
     
         .inputTitleDiv{
             display: flex;
@@ -68,6 +73,8 @@
             font-size: 2em;
             @media (max-width:400px) {
                 font-size: 1em;
+                rows: 15;
+
                 
             }
         }
