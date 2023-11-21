@@ -55,7 +55,7 @@ const SignUp = () => {
     const signUp = async (e) => {
         try{
             e.preventDefault()
-            if(!validateFun) return                    // if fields are not validated then return
+            if(!validateFun()) return                    // if fields are not validated then return
             const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/user/signUp`, {name, email, password})
             if(response.status == 201){
                 setEmail('')
