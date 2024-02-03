@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const JWTauth = async (req, res, next) => {
     try{
-        const authHeader = req.headers.authorization;
+        const authHeader = req.headers?.authorization;
         if(authHeader){
             const token = authHeader.split(' ')[1]
             const decoded = jwt.verify(token, process.env.HMAC_PRIVATE_KEY)
