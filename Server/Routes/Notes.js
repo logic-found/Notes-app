@@ -7,6 +7,5 @@ router.get('/getAllNotes', controller.getAllNotes)
     .post('/addNote', controller.addNote)
     .patch('/updateNote/:id', controller.updateNote)
     .delete('/deleteNote/:id', controller.deleteNote)
-    .delete('/deleteAllNotes', controller.deleteAllNotes)
 
 exports.router = router

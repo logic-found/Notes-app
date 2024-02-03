@@ -6,6 +6,5 @@ router
   .post("/signUp", controller.signUp)
   .post("/signIn", controller.signIn)
   .post("/logout", controller.logout)
-  .delete('/deleteAllUsers', controller.deleteAllUsers)
 
 exports.router = router
