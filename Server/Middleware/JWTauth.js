@@ -18,15 +18,15 @@ const JWTauth = async (req, res, next) => {
             }
             else{
                 //user doesn't exist
-                res.status(401).json({"name": "user doesn't exist"})
+                res.status(401).json({"name": "Please login to access this resource"})
             }
         }
         else{
-            res.status(401).json({"name":"no token in header"})
+            res.status(401).json({"name":"Please login to access this resource"})
         }
     }
     catch(err){
-        res.status(401).json({"name":"authorization error", err})
+        res.status(401).json({"name":"Error Occured", err})
     }
 
 }

@@ -34,8 +34,8 @@ exports.signUp = async (req, res) => {
         }
     }
     catch(error){
-       //res.status(500).json(error)
-       res.json(error)
+       res.status(500).json(error)
+       
     }
 }
 
@@ -60,11 +60,9 @@ exports.signIn = async (req, res) => {
                         options = {
                             expiresIn : '1h'
                         }
-                        var token = jwt.sign({ userId}, privateKey, options);
+                        const token = jwt.sign({ userId}, privateKey, options);
                         user.token = token                          // set token for this user
                         await user.save()
-                        // res.cookie("token", token, { httpOnly: true, domain: 'localhost', secure: true })
-                        // console.log(res.getHeaders())
                         res.status(200).json({name, result, token})
                     }
                     else{
@@ -82,14 +80,11 @@ exports.signIn = async (req, res) => {
     }
     catch(err){
         res.status(500).json({err})
-        //console.log(err)
-        //res.json(err)
     }
 
 }
 
 exports.logout = async (req, res) => {
-    //res.clearCookie('token');
     res.status(200).json({ message: 'Logout successful' });  
 }
 
@@ -99,8 +94,8 @@ exports.deleteAllUsers = async (req, res) => {
         res.status(200).json(response)
     }
     catch(err){
-        //res.status(500).json(err)
-        res.json(err)
+        res.status(500).json(err)
+        
     }
 }
 

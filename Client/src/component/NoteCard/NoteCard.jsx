@@ -32,7 +32,7 @@ const NoteCard = ({id, title, description, color}) => {
         toast.error("Server connection error")
       }
       else if(err.response?.status === 401){   // if json error than navigate to login page
-        toast.success("Please login first")
+        toast.success("Please login to access this resource")
         navigate('/signIn')
       }
       console.log(err)

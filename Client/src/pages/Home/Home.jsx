@@ -36,6 +36,7 @@ const Home = () => {
         toast.error("Server connection error")
       }
       else if (err.response?.status === 401) {   // if json error than navigate to login page
+        toast.error("Please login to access this resource")
         navigate('/signIn')
       }
       console.log(err)

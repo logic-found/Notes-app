@@ -37,6 +37,7 @@ const SignIn = () => {
       } 
       else{
         //login not success
+
         console.log(response)
       }
     }
@@ -44,9 +45,9 @@ const SignIn = () => {
       console.log(err)
       const {user, result} = err.response?.data
       
-      if(user != undefined && user == null){
+      if(!user){
         // email is not registered
-        setEmailError("email not registered")
+        setEmailError("Invalid email or password")
       }
       else{
         setEmailError()
