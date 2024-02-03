@@ -1,4 +1,4 @@
-# SimpleNote
+# SimpleNote : https://notes-app-frontend-six.vercel.app
 A MERN-based notes app that has the functionality to :  
 
 a)  User Authentication  
