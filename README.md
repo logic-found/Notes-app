@@ -17,6 +17,7 @@ b)  Notes functionality
 ### Dashboard
 
 ![alt text](image.png)
+![alt text](image-1.png)
 
 ### Create Notes
 <img width="949" alt="image" src="https://github.com/logic-found/SimpleNote/assets/93260606/d8a94c1f-f2ac-4410-8075-b2f04006c798">
